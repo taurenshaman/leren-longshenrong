@@ -29,103 +29,7 @@
   <link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/icon.css">
   <link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/sidebar.css">
   <link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/transition.css">
-
-  <style type="text/css">
-    .hidden.menu {
-      display: none;
-    }
-
-    .masthead.segment {
-      min-height: 700px;
-      padding: 1em 0em;
-    }
-
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
-
-    .masthead h1.ui.header {
-      margin-top: 3em;
-      margin-bottom: 0em;
-      font-size: 4em;
-      font-weight: normal;
-    }
-
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
-
-    .ui.vertical.stripe {
-      padding: 8em 0em;
-    }
-
-    .ui.vertical.stripe h3 {
-      font-size: 2em;
-    }
-
-    .ui.vertical.stripe .button+h3,
-    .ui.vertical.stripe p+h3 {
-      margin-top: 3em;
-    }
-
-    .ui.vertical.stripe .floated.image {
-      clear: both;
-    }
-
-    .ui.vertical.stripe p {
-      font-size: 1.33em;
-    }
-
-    .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
-    }
-
-    .quote.stripe.segment {
-      padding: 0em;
-    }
-
-    .quote.stripe.segment .grid .column {
-      padding-top: 5em;
-      padding-bottom: 5em;
-    }
-
-    .footer.segment {
-      padding: 5em 0em;
-    }
-
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
-
-    @media only screen and (max-width: 700px) {
-      .ui.fixed.menu {
-        display: none !important;
-      }
-      .secondary.pointing.menu .item,
-      .secondary.pointing.menu .menu {
-        display: none;
-      }
-      .secondary.pointing.menu .toc.item {
-        display: block;
-      }
-      .masthead.segment {
-        min-height: 350px;
-      }
-      .masthead h1.ui.header {
-        font-size: 2em;
-        margin-top: 1.5em;
-      }
-      .masthead h2 {
-        margin-top: 0.5em;
-        font-size: 1.5em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/site.css">
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/semantic-ui/semantic.min.js"></script>
@@ -154,8 +58,10 @@
         //   .sidebar('attach events', '.toc.item')
         //   ;
 
-      })
-      ;
+        // load footer <div/>
+        $("#pagecontent").load("footer.html").insertAfter($(".page-content"));
+
+      });
   </script>
 </head>
 
@@ -165,6 +71,7 @@
   <div class="ui large top fixed hidden menu">
     <div class="ui container">
       <a class="active item" href="index.html">首页</a>
+      <a class="item" href="about.html">关于我们</a>
     </div>
   </div>
 
@@ -180,13 +87,14 @@
 
       <div class="ui container">
         <div class="ui large secondary menu">
-            <div href="#" class="header item">
-              <img class="logo" src="images/leren-180x180.jpg">
-            </div>
+          <div href="#" class="header item">
+            <img class="logo" src="images/leren-180x180.jpg">
+          </div>
           <!-- <a class="toc item">
             <i class="sidebar icon"></i>
           </a> -->
           <a class="active item" href="index.html">首页</a>
+          <a class="item" href="about.html">关于我们</a>
         </div>
       </div>
 
@@ -196,31 +104,99 @@
         </h1>
         <h2>立足天津，放眼未来</h2>
         <br />
-        <p>官方网站正在建设中</p>
-        <!--<div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>-->
+        <!-- <p>官方网站正在建设中</p> 
+        <a class="ui huge primary button" href="about.html">关于我们 <i class="right arrow icon"></i></a>-->
       </div>
 
     </div>
 
-    <div class="ui stackable link cards centered" style="margin: 20px; padding: 20px;">
+    <div class="ui centered" style="margin: 20px; padding: 20px;">
+      <h3 class="ui center aligned icon header">
+        <i class="puzzle icon"></i>
+        <div class="content">
+          产业布局
+          <!-- <div class="sub header">Manage your account settings and set e-mail preferences.</div> -->
+        </div>
+      </h3>
+    </div>
+
+    <div class="ui stackable link cards centered page-content" id="pagecontent" style="margin: 20px; padding: 20px;">
 
       <div class="card">
         <a class="image" href="#">
-          <img src="images/investment-360x360.jpg">
+          <img src="images/trade-500x500.jpg">
         </a>
         <div class="content">
-          <a class="header" href="#">投资</a>
+          <a class="header" href="#">贸易</a>
           <!--<div class="meta">
             <a></a>
           </div>-->
           <div class="description">
-            天津乐仁商捷投资有限公司
+            天津乐仁商捷贸易有限公司
+          </div>
+        </div>
+        <!-- <div class="extra content">
+          <span class="right floated">
+            <i class="marker icon"></i>
+          天津
+        </span>
+          <span>
+          <i class="call icon"></i>
+          022-27361999
+        </span>
+        </div> -->
+      </div>
+
+      <div class="card">
+        <a class="image" href="#">
+          <img src="images/education-500x500.jpg">
+        </a>
+        <div class="content">
+          <a class="header" href="#">教育</a>
+          <!--<div class="meta">
+            <a></a>
+          </div>-->
+          <div class="description">
+            天津育仁未来教育咨询有限公司
           </div>
         </div>
         <!-- <div class="extra content">
           <span>
             <i class="shop icon"></i>
-            jd.com
+            tmall.com
+          </span>
+        </div> -->
+      </div>
+
+      <!-- <div class="card">
+        <a class="image" href="#">
+          <img src="images/investment-360x360.jpg">
+        </a>
+        <div class="content">
+          <a class="header" href="#">投资</a>
+          <div class="description">
+            天津乐仁商捷投资有限公司
+          </div>
+        </div>
+      </div> -->
+
+      <div class="card">
+        <a class="image" href="#">
+          <img src="images/service-1-800x800.jpg">
+        </a>
+        <div class="content">
+          <a class="header" href="#">物业管理</a>
+          <!--<div class="meta">
+            <a></a>
+          </div>-->
+          <div class="description">
+            天津乐仁胜鑫物业管理有限公司
+          </div>
+        </div>
+        <!-- <div class="extra content">
+          <span>
+            <i class="shop icon"></i>
+            tmall.com
           </span>
         </div> -->
       </div>
@@ -246,102 +222,21 @@
         </div> -->
       </div>
 
-      <div class="card">
+      <!-- <div class="card">
           <a class="image" href="#">
             <img src="images/health-800x800.jpg">
           </a>
           <div class="content">
             <a class="header" href="#">健康</a>
-            <!--<div class="meta">
-              <a></a>
-            </div>-->
             <div class="description">
               筹备中，敬请期待。
             </div>
           </div>
-          <!-- <div class="extra content">
-            <span>
-              <i class="shop icon"></i>
-              www.lrlsr.com
-            </span>
-          </div> -->
-        </div>
-
-      <div class="card">
-          <a class="image" href="#">
-            <img src="images/education-500x500.jpg">
-          </a>
-          <div class="content">
-            <a class="header" href="#">教育</a>
-            <!--<div class="meta">
-              <a></a>
-            </div>-->
-            <div class="description">
-              天津育仁未来教育咨询有限公司
-            </div>
-          </div>
-          <!-- <div class="extra content">
-            <span>
-              <i class="shop icon"></i>
-              tmall.com
-            </span>
-          </div> -->
-        </div>
-
-      <div class="card">
-        <a class="image" href="#">
-          <img src="images/trade-500x500.jpg">
-        </a>
-        <div class="content">
-          <a class="header" href="#">商贸</a>
-          <!--<div class="meta">
-            <a></a>
-          </div>-->
-          <div class="description">
-            天津乐仁隆参榕商贸有限公司
-          </div>
-        </div>
-        <!-- <div class="extra content">
-          <span class="right floated">
-            <i class="marker icon"></i>
-          天津
-        </span>
-          <span>
-          <i class="call icon"></i>
-          022-27361999
-        </span>
-        </div> -->
-      </div>
+      </div> -->
 
     </div>
 
-    <h4 class="ui horizontal divider header">
-      <i class="plus icon"></i>
-    </h4>
-
-    <div class="ui vertical footer segment">
-      <div class="ui container">
-
-        <div class="ui stackable divided equal height stackable grid">
-          <!--<div class="three wide column">
-            <h4 class="ui header">About</h4>
-            <p></p>
-          </div>-->
-          <div class="three wide column">
-            <h4 class="ui header">联系我们</h4>
-            <p>
-              <span><i class="marker icon"></i>地址</span>：天津市和平区河北路122号二楼201
-              <br/>
-              <span><i class="call icon"></i>电话</span>：022-27361999
-            </p>
-          </div>
-          <!-- <div class="seven wide column">
-            <h4 class="ui header">我们的使命</h4>
-            <p>呵护您的健康，改善您的生活。</p>
-          </div> -->
-        </div>
-      </div>
-    </div>
+    
   </div>
 
 </body>
